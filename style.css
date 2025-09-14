@@ -333,7 +333,7 @@ body{
     font-weight: 600;
     padding: 2px 3px;
     border-radius: 5px;
-    width: fit-content;
+    width: 34px;
     height: fit-content;
     text-align: center;
     visibility: visible;
@@ -543,3 +543,4 @@ text-shadow: none;
     }
     
 }
+
