@@ -517,9 +517,20 @@ body{
         background-image: url(images/icons/x.png);
         background-size: 65%;
     }
-   .tv::after{
+    .tv::after{
         position: absolute;
         content: "📺";
+    }
+    .celebration::after{
+        position: absolute;
+        content: "🎉";
+        font-size: 20px;
+    }
+    .birthday::after{
+        position: absolute;
+        content: "🎂";
+            font-size: 20px;
+
     }
 
 
