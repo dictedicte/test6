@@ -204,6 +204,7 @@ body{
     margin-left: 100px;
     width: 22.5px;
     font-weight: 600;
+    margin-bottom: 5px;
 }
 .day .weekday{
     position: absolute;
@@ -241,7 +242,7 @@ body{
     margin: 0 7% 0 23%;
     min-height: 44.4px;
     height: fit-content;
-    border-radius: 13px;
+    border-radius: 15px;
     display: flex;
     flex-direction: row;
     column-gap: 3px;
@@ -250,11 +251,11 @@ body{
     position: relative;
     background-color: #f6f0fd;
     background-color: #e7daf5;
-    filter:drop-shadow( 2px 2px 8px -2px #a98eca);
-    margin-bottom: 9px;
+    filter:drop-shadow(2px 2px 6px #a98eca7d);
+    margin-bottom: 10px;
 }
 .entry:last-child{
-    margin-bottom: 0;
+    margin-bottom: 5px;
 }
 .glow{
     box-shadow: 0 0 12px -3px white;
@@ -279,7 +280,6 @@ body{
     opacity: 1;
     color: #d0bee4;
     background-color: #ab8fcf;
-    box-shadow: 2px 2px 8px -2px #a98ecaa4;
     text-shadow: none;
 }
 
@@ -406,36 +406,102 @@ body{
     margin-right: 6px;
 }
 
-.entry .right a{
+.entry .right .info,.entry .right a,.entry .right .links{
     position: relative;
     width: 33px;
     height: 33px;
-    background-color: #c7b0e3;
-    cursor: pointer;
-    background-image: url(images/open_in_new_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg);
+    background-color: #b89fd7;
+    cursor: default;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 60%;
+    background-size: 70%;
+    border-radius: 10px;
     border-radius: 10px;
     position: absolute;
-    right: 0;
+    right: 7px;
+    width: 30px;
+    height: 30px;
 }
-.entry a:hover{
+.entry .right a{
+    cursor: pointer;
+    background-image: url(images/open_in_new_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg);
+}
+.entry .right .info{
+    background-image: url(images/info_i_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg);
+}
+.entry .right .info:hover,.entry .right a:hover,.entry .right .links:hover{
     background-color: #a98eca;
 }
-.entry a:active{
+.entry .right .info:active,.entry .right a:active,.entry .right .links:active{
     background-color: #836f9a;
 }
 
-.entry .right .links{
-    position: relative;
-    width: 30px;
-    height: 30px;
-    background-color: #ffffff;
-    cursor: pointer;
-    background-size: 60%;
-    border-radius: 10px;
+
+.entry .right .info:hover div{
+    visibility: visible;
+    opacity: 1;
 }
+.info div{
+    visibility: hidden;
+    position: absolute;
+    min-width: 75px;
+    min-height: 50px;
+    background-color: white;
+    right: 30px;
+    top: 30px;
+    z-index: 900;
+    opacity: 0;
+    border-radius: 15px;
+    border-top-right-radius: 0;
+    overflow: hidden;
+    filter:drop-shadow( 2px 2px 8px 0px #7747b2);
+}
+
+
+.details{
+    background-color: #b89fd7;
+    border-radius: 10px;
+    width: fit-content;
+    height: 20px;
+    color: white;
+    font-size: 10px;
+    font-weight: 800;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+}
+.details::before{
+    content: "DETAILS";
+}
+.details::after{
+    content: "";
+    height: 20px;
+    width: 20px;
+    background-image: url(images/arrow_drop_down_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg);
+    transform: translateY(-2.5px);
+}
+.entry .right .details:hover div{
+    visibility: visible;
+    opacity: 1;
+}
+.details div{
+    visibility: hidden;
+    position: absolute;
+    min-width: 75px;
+    min-height: 50px;
+    background-color: white;
+    right: 30px;
+    top: 30px;
+    z-index: 900;
+    opacity: 0;
+    border-radius: 15px;
+    border-top-right-radius: 0;
+    overflow: hidden;
+    filter:drop-shadow( 2px 2px 8px 0px #7747b2);
+}
+
 .entry .links::before{
     content: "";
     position: absolute;
@@ -477,76 +543,122 @@ body{
     background-repeat: no-repeat;
     background-size: 80%;
     position: relative;
+    filter: drop-shadow(0.25px 0.25px 2px #a98eca57);
 }
-.entry img{
-    border-radius: 3px;
-    box-sizing: border-box;
-    width: fit-content;
-    height: 85%;
-}
-.glow img{
-    box-shadow: 0px 0px 4px 2px white;
-}
-    .event::after{
-        position: absolute;
-        content: "🎫";
-    }
-    .music::after{
-        position: absolute;
-        content: "🎵";
-        font-size: 18px;
-        text-shadow:  0 0 5px white;
-    }
-    .weverse{
-        background-image: url(images/icons/weverse.svg);
-        background-size: 80%;
-    }
-    .instagram{
-        background-image: url(images/icons/instagram.svg);
-        background-size: 75%;
-    }
-    .youtube{
-        background-image: url(images/icons/youtube.png);
-        background-size: 80%;
-    }
-    .twitter{
-        background-image: url(images/icons/twitter.png);
-        background-size: 80%;
-    }
-    .x{
-        background-image: url(images/icons/x.png);
+    .music{
+        background-image: url(images/icons/music.png);
         background-size: 65%;
     }
-    .tv::after{
-        position: absolute;
-        content: "📺";
+    .event{
+        background-image: url(images/icons/event.png);
+        background-size: 75%;
     }
-    .celebration::after{
-        position: absolute;
-        content: "🎉";
-        font-size: 20px;
+    .tv{
+        background-image: url(images/icons/tv.png);
+        background-size: 75%;
     }
-    .birthday::after{
-        position: absolute;
-        content: "🎂";
-            font-size: 20px;
-
+    .radio{
+        background-image: url(images/icons/radio.png);
+        background-size: 75%;
+    }
+    .physical{
+        background-image: url(images/icons/physical.png);
+        background-size: 70%;
+    }
+    .birthday{
+        background-image: url(images/icons/birthday.png);
+        background-size: 70%;
+    }
+   
+    .anniversary{
+        background-image: url(images/icons/anniversary.png);
+        background-size: 65%;
+    }
+    .awardshow{
+        background-image: url(images/icons/award.png);
+        background-size: 75%;
     }
 
+    /*SOCIAL MEDIA*/
+    .weverse{
+        background-image: url(images/icons/social-media/weverse.svg);
+        background-size: 75%;
+    }
+    .instagram{
+        background-image: url(images/icons/social-media/instagram.svg);
+        background-size: 70%;
+    }
+    .youtube{
+        background-image: url(images/icons/social-media/youtube.png);
+        background-size: 73%;
+    }
+    .twitter{
+        background-image: url(images/icons/social-media/twitter.png);
+        background-size: 75%;
+    }
+    .x{
+        background-image: url(images/icons/social-media/x.png);
+        background-size: 60%;
+    }
+    .facebook{
+        background-image: url(images/icons/social-media/facebook.png);
+        background-size: 80%;
+    }
+    .tiktok{
+        background-image: url(images/icons/social-media/tiktok.png);
+        background-size: 80%;
+    }
+    .stationhead{
+        background-image: url(images/icons/social-media/stationhead.jpg);
+        background-size: 100%;
+        border-radius: 100%;
+        border-radius: 10px;
+        scale: 0.80;
+    }
+    .soundcloud{
+        background-image: url(images/icons/social-media/soundcloud2.png);
+        background-size: 85%;
+    }
+    .daumcafe{
+        background-image: url(images/icons/social-media/daumcafe.svg);
+        background-size: 85%;
+    }
+    .weibo{
+        background-image: url(images/icons/social-media/weibo.svg);
+        background-size: 80%;
+    }
+    
+/*DETAILS*/
 
+    .image{
+        background-image: url(images/icons/image.png);
+        background-size: 70%;
+    }
+    .video{
+        background-image: url(images/icons/video.png);
+        background-size: 70%;
+    }
     .live::after{
+        content: "";
+        background-image: url(images/icons/live.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
         position: absolute;
-        content: "🔴";
-        font-size: 10px;
+        width: 11px;
+        height: 11px;
+        right: 0px;
         top: 0;
-        right: 0;
     }
-
-
-
-
-
-
+    .dvd{
+        background-image: url(images/icons/dvd.png);
+        background-size: 70%;
+    }
+    .restriction{
+        background-image: url(images/icons/restriction.png);
+        background-size: 60%;
+    }
+    
 
 @media (max-width:600px){
     .scroll{
