@@ -21,26 +21,124 @@ body{
     }
     ::-webkit-scrollbar-thumb {
         border: solid 5px #bda6da;
-        background-color: #aaaaaa;
+        background-color: #9c7ec2;
         border-radius: 10px;
     }
     ::-webkit-scrollbar-thumb:hover {
-        background-color: #a28eb7;
+        background-color: #9c7ec2;
     }
     ::-webkit-scrollbar-thumb:active{
-        background-color: #836f9a;
+        background-color: #9c7ec2
     }
+
+
+
+.header{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    z-index: 1000;
+    padding-top: 10px;
+    box-sizing: border-box;
+    background-color: #a98eca;
+}
+.header h1{
+    color: white;
+    font-size: 50px;
+    padding: 0 10px;
+    max-width: 70%;
+    width: 500px;
+    text-align: center;
+}
+.header div{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.header div:hover{
+    background-color: #9c7ec2;
+}
+.header #back{
+    background-image: url(images/arrow_back_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg);
+    background-size: 90%;
+}
+.header #settings{
+    background-image: url(images/settings_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg);
+    background-size: 85%;
+}
+.header #settings .settings{
+    width: fit-content;
+    height: fit-content;
+    background-color: #ffffff;
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    z-index: 600;
+    visibility: hidden;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    border-radius: 10px;
+    cursor: default;
+}
+.header #settings:hover .settings{
+    visibility: visible;
+    opacity: 1;
+}
+.header #settings .settings h2{
+    color: #7747b2;
+    font-weight: 900;
+    font-size: 20px;
+    padding: 0 10px;
+}
+.header #settings .settings h3{
+    color: #7747b2;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 0 10px;
+    width: 90%;
+    text-wrap: nowrap;
+    border-top: solid 2px #7747b2;
+    text-align: center;
+}
+.header #settings .settings p{
+    color: #7747b2;
+    font-weight: 550;
+    font-style: italic;
+    font-size: 12px;
+    text-align: end;
+}
+.header #settings .settings button{
+    background-color: #7747b2;
+    padding: 3px 6px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    min-width: 40px;
+}
+
+
 
 .scroll{
     width: 100%;
     max-width: 100%;
-    height: 80vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
     overflow-y: auto;
     overflow-x: hidden;
+    box-sizing: border-box;
 }
 
 .overlay{
@@ -70,97 +168,6 @@ body{
     z-index: 550;
     transform: translateY(-1px);
 }
-
-.header{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 0;
-    z-index: 1000;
-    padding-top: 10px;
-}
-.header h1{
-    color: #836f9a;
-    font-size: 40px;
-    padding: 0 10px;
-    max-width: 70%;
-    width: 500px;
-    text-align: center;
-}
-.header div{
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-    cursor: pointer;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-}
-.header div:hover{
-    background-color: #ffffff;
-}
-.header #back{
-    background-image: url(images/arrow_back_24dp_B694E2_FILL0_wght400_GRAD0_opsz24.svg);
-    background-size: 90%;
-}
-.header #settings{
-    background-image: url(images/settings_24dp_B694E2_FILL0_wght400_GRAD0_opsz24.svg);
-    background-size: 85%;
-}
-.header #settings .settings{
-    width: fit-content;
-    height: fit-content;
-    background-color: #ffffff;
-    position: absolute;
-    right: 50px;
-    top: 50px;
-    z-index: 600;
-    visibility: hidden;
-    opacity: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 8px;
-    border-radius: 10px;
-    cursor: default;
-}
-.header #settings:hover .settings{
-    visibility: visible;
-    opacity: 1;
-}
-.header #settings .settings h2{
-    color: #ffffff;
-    font-weight: 900;
-    font-size: 20px;
-    padding: 0 10px;
-}
-.header #settings .settings h3{
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 15px;
-    padding: 0 10px;
-    width: 90%;
-    text-wrap: nowrap;
-    border-top: solid 2px #ffffff;
-    text-align: center;
-}
-.header #settings .settings p{
-    color: #ffffff;
-    font-weight: 550;
-    font-style: italic;
-    font-size: 12px;
-    text-align: end;
-}
-.header #settings .settings button{
-    background-color: #ffffff;
-    padding: 3px 6px;
-    border-radius: 5px;
-    font-weight: 600;
-    cursor: pointer;
-    min-width: 40px;
-}
-
 
 .year-overlay,.month-overlay,.day-overlay{
     width: 100%;
@@ -242,7 +249,7 @@ body{
     margin: 0 7% 0 23%;
     min-height: 44.4px;
     height: fit-content;
-    border-radius: 15px;
+    border-radius: 18px;
     display: flex;
     flex-direction: row;
     column-gap: 3px;
@@ -251,7 +258,7 @@ body{
     position: relative;
     background-color: #f6f0fd;
     background-color: #e7daf5;
-    filter:drop-shadow(2px 2px 6px #a98eca7d);
+    box-shadow:2px 2px 6px 0 #a98eca7d;
     margin-bottom: 10px;
 }
 .entry:last-child{
@@ -259,6 +266,8 @@ body{
 }
 .glow{
     box-shadow: 0 0 12px -3px white;
+    box-shadow:0 0 12px -3px white, 2px 2px 6px 0 #a98eca7d;
+
     background-color: #f6f0fd;
     background-color: #f4ecfc;
     text-shadow: rgba(255, 255, 255, 0.678) 0 0 4px;
@@ -408,19 +417,19 @@ body{
 
 .entry .right .info,.entry .right a,.entry .right .links{
     position: relative;
-    width: 33px;
-    height: 33px;
+    width: 36px;
+    height: 36px;
     background-color: #b89fd7;
     cursor: default;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 70%;
+    background-size: 60%;
     border-radius: 10px;
-    border-radius: 10px;
+    border-radius: 13px;
     position: absolute;
     right: 7px;
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
 }
 .entry .right a{
     cursor: pointer;
@@ -559,7 +568,7 @@ body{
     }
     .radio{
         background-image: url(images/icons/radio.png);
-        background-size: 75%;
+        background-size: 70%;
     }
     .physical{
         background-image: url(images/icons/physical.png);
@@ -572,11 +581,15 @@ body{
    
     .anniversary{
         background-image: url(images/icons/anniversary.png);
-        background-size: 65%;
+        background-size: 70%;
     }
     .awardshow{
         background-image: url(images/icons/award.png);
         background-size: 75%;
+    }
+    .military{
+        background-image: url(images/icons/military.png);
+        background-size: 70%;
     }
 
     /*SOCIAL MEDIA*/
@@ -586,7 +599,7 @@ body{
     }
     .instagram{
         background-image: url(images/icons/social-media/instagram.svg);
-        background-size: 70%;
+        background-size: 75%;
     }
     .youtube{
         background-image: url(images/icons/social-media/youtube.png);
@@ -608,13 +621,6 @@ body{
         background-image: url(images/icons/social-media/tiktok.png);
         background-size: 80%;
     }
-    .stationhead{
-        background-image: url(images/icons/social-media/stationhead.jpg);
-        background-size: 100%;
-        border-radius: 100%;
-        border-radius: 10px;
-        scale: 0.80;
-    }
     .soundcloud{
         background-image: url(images/icons/social-media/soundcloud2.png);
         background-size: 85%;
@@ -626,6 +632,20 @@ body{
     .weibo{
         background-image: url(images/icons/social-media/weibo.svg);
         background-size: 80%;
+    }
+    .stationhead{
+        background-image: url(images/icons/social-media/stationhead.jpg);
+        background-size: 100%;
+        border-radius: 100%;
+        border-radius: 10px;
+        scale: 0.80;
+    }
+    .naverblog{
+        background-image: url(images/icons/social-media/naverblog.png);
+        background-size: 100%;
+        border-radius: 100%;
+        border-radius: 10px;
+        scale: 0.80;
     }
     
 /*DETAILS*/
@@ -661,7 +681,7 @@ body{
     
 
 @media (max-width:600px){
-    .scroll{
+    .overlay{
         width: 100%;
     }
     
